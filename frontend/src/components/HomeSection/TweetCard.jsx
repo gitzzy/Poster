@@ -171,7 +171,8 @@ export default function TweetCard() {
             {false ? <FavoriteBorderRoundedIcon
               className="cursor-pointer"
               onClick={handleLike}
-            /> : <FavoriteIcon className="text-red-500"/>
+            /> : <FavoriteIcon className="text-red-500 cursor-pointer"
+            onClick={handleLike}/>
              }
              <p>67</p>
           </div>
