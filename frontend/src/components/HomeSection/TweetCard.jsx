@@ -85,7 +85,7 @@ export default function TweetCard() {
             aria-expanded={open ? "true" : undefined}
             onClick={handleClick}
           >
-            <MorehorizIcon />
+            <MorehorizIcon className="ml-30" />
           </Button>
           <Menu
             anchorEl={anchorEl}
@@ -139,7 +139,7 @@ export default function TweetCard() {
           </Menu>
         </div>
       </div>
-      <div className="mt-2">
+      <div className="mt-2 ml-15">
         <div className="cursor-pointer">
           <p className="mb-2 p-0">This is Sample tweet</p>
           <img

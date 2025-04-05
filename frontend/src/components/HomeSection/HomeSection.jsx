@@ -100,7 +100,8 @@ export default function HomeSection() {
         </div>
       </section>
       <section className="">
-            <TweetCard/>
+        {[1,1,1,1,1].map((item) => <TweetCard/>)}
+            
       </section>
     </div>
   );
