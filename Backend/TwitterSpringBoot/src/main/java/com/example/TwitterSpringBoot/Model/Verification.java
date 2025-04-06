@@ -2,10 +2,12 @@ package com.example.TwitterSpringBoot.Model;
 
 import java.time.LocalDateTime;
 
+import jakarta.persistence.Embeddable;
 import lombok.Data;
 
 @Data
-public class Varification {
+@Embeddable
+public class Verification {
  
     private boolean status = false;
     private LocalDateTime startedAt;
