@@ -9,5 +9,4 @@ public class TwitterSpringBootApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(TwitterSpringBootApplication.class, args);
 	}
-
 }
