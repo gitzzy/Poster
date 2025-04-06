@@ -79,7 +79,7 @@ export default function HomeSection() {
                   <FmdGoodIcon className="text-[#1d9bf0]" />
                   <EmojiEmotionsIcon className="text-[#1d9bf0]" />
                 </div>
-                <div>
+                <div className="mr-45">
                   <Button
                     sx={{
                       width: "100%",
@@ -87,6 +87,7 @@ export default function HomeSection() {
                       paddingY: "5px",
                       paddingX: "20px",
                       bgcolor: "#1d9bf0",
+                      
                     }}
                     variant="contained"
                     type="submit"

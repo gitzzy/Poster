@@ -47,7 +47,7 @@ export default navigation =[
     {
         title:'Account',
         icon: <AccIcon/>,
-        path:'/Account'
+        path:'/profile/5'
     },
     {
         title:'Pending',
