@@ -38,15 +38,14 @@ public class AuthController {
 	private CustomeUserDetailsServiceImplementation customeUserDetails;
 	
 	@PostMapping("/signup")
-	public ResponseEntity<AuthResponse> createUserHandler(@RequestBody User user) throws  UserException {
+	public ResponseEntity<AuthResponse> createUserHandler(@RequestBody User user) throws UserException {
 		
-		String email = user.getEmail();
+		System.out.println("User" +user);
 		
 		String name = user.getFullName();
-		
-		String password = user.getPassword();
-		
 		String birthDate = user.getBirthDate();
+		String email = user.getEmail();
+		String password = user.getPassword();
 		
 		User isEmailExist = userRepository.findByEmail(email);
 		
@@ -55,11 +54,10 @@ public class AuthController {
 		}
 		
 		User createdUser = new User();
-		createdUser.setEmail(email);
 		createdUser.setFullName(name);
-		createdUser.setPassword(password);
 		createdUser.setBirthDate(birthDate);
-		
+		createdUser.setEmail(email);
+		createdUser.setPassword(passwordEncoder.encode(password));
 		createdUser.setVerification(new Verification());
 		
 		User savedUser = userRepository.save(createdUser);
@@ -72,7 +70,7 @@ public class AuthController {
 		
 		AuthResponse res = new  AuthResponse(token, true);
 		
-		return new ResponseEntity<AuthResponse>(res, HttpStatus.ACCEPTED);
+		return new ResponseEntity<AuthResponse>(res, HttpStatus.CREATED);
 			
 	}
 
@@ -81,19 +79,23 @@ public class AuthController {
 		String username = user.getEmail();
 		String password = user.getPassword();
 		
-		Authentication authentication  = auhtenticate(username,password);
+		Authentication authentication  = authhenticate(username,password);
 		
-		return null;
+		String token = jwtProvider.generateToken(authentication);
+		
+		AuthResponse res = new  AuthResponse(token, true);
+		
+		return new ResponseEntity<AuthResponse>(res, HttpStatus.OK);
 	}
 	
-	private Authentication auhtenticate(String username, String password) {
+	private Authentication authhenticate(String username, String password) {
 		UserDetails userDetails =  customeUserDetails.loadUserByUsername(username);
 		
 		if(userDetails == null) {
 			throw new BadCredentialsException("Invalid username...");
 		}
 		
-		if(passwordEncoder.matches(password,userDetails.getPassword())) {
+		if(!passwordEncoder.matches(password,userDetails.getPassword())) {
 			throw new BadCredentialsException("Invalid username or password");
 		}
 		

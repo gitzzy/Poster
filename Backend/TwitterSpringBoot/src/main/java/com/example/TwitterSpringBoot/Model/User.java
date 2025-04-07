@@ -3,8 +3,6 @@ package com.example.TwitterSpringBoot.Model;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.hibernate.annotations.ManyToAny;
-
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.CascadeType;
@@ -48,9 +46,11 @@ public class User {
     @Embedded
     private Verification verification;
 
+    @JsonIgnore
     @ManyToMany
     private List<User> followers = new ArrayList<>(); 
 
-    @ManyToAny
+    @JsonIgnore
+    @ManyToMany
     private List<User> followings = new ArrayList<>();
 }
