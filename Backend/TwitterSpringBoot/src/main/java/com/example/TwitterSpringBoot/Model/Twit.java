@@ -1,5 +1,6 @@
 package com.example.TwitterSpringBoot.Model;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,7 +25,10 @@ public class Twit {
     @ManyToOne
     private User user;
 
+    private LocalDateTime createdAt;
     private String content;
+    private String image;
+    private String video;
 
     @OneToMany(mappedBy = "twit", cascade =  CascadeType.ALL)
     private List<Like> likes = new ArrayList<>();
@@ -39,7 +43,6 @@ public class Twit {
     private Twit replyFor;
 
     private boolean isReply;
-
     private boolean isTwit;
 
 }
