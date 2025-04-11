@@ -16,7 +16,7 @@ export default function HomePage() {
     </div>
 
     {/* Center Content */}
-    <div className="w-full lg:w-[60%] overflow-y-auto">
+    <div className="w-full lg:w-[55%] overflow-y-auto">
       <Routes>
         <Route path="/" element={<HomeSection />} />
         <Route path="/profile/:id" element={<Profile />} />
@@ -24,7 +24,7 @@ export default function HomePage() {
     </div>
 
     {/* Right Part */}
-    <div className="hidden lg:block w-[20%]">
+    <div className="hidden lg:block w-[20%] ml-5">
       <div className="sticky top-0 h-screen overflow-y-auto">
         <RightPart />
       </div>

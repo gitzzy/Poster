@@ -3,6 +3,10 @@ import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
 import { useNavigate } from "react-router-dom";
 import { Avatar, Button } from "@mui/material";
 import VerifiedIcon from "@mui/icons-material/Verified";
+import BusinessCenterIcon from "@mui/icons-material/BusinessCenter";
+import LocationOnIcon from "@mui/icons-material/LocationOn";
+import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
+import TabsComp from "./TabsComp";
 
 export default function Profile() {
   const navigate = useNavigate();
@@ -71,6 +75,49 @@ export default function Profile() {
             <h1 className="font-bold text-lg">Devansh Tyagi</h1>
             {true && <VerifiedIcon className="text-[#E2B619] ml-2" />}
           </div>
+          <h1 className="text-gray-500 ml-10">@tyagidevansh</h1>
+        </div>
+
+        <div className="mt-2 space-y-3 ml-10 mr-10">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus
+            nesciunt nam repellendus rem, ipsa perspiciatis consectetur facere
+            ipsam, exercitationem mollitia a amet explicabo perferendis harum
+            voluptatem iste reprehenderit consequuntur! Quae?
+          </p>
+          <div className="py-2 flex space-x-5">
+            <div className="flex items-center text-gray-500">
+              <BusinessCenterIcon />
+              <p className="ml-2">Education</p>
+            </div>
+
+            <div className="flex items-center text-gray-500">
+              <LocationOnIcon />
+              <p className="ml-2">Location</p>
+            </div>
+
+            <div className="flex items-center text-gray-500">
+              <CalendarMonthIcon />
+              <p className="ml-2">Joined 14 May</p>
+            </div>
+          </div>
+
+          <div className="flex items-center space-x-5">
+            <div className="flex items-center space-x-1 font-semibold">
+              <span>989</span>
+              <span className="text-gray-500">Followers</span>
+            </div>
+
+            <div className="flex items-center space-x-1 font-semibold">
+              <span>9</span>
+              <span className="text-gray-500">Following</span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div>
+          <TabsComp />
         </div>
       </section>
     </div>
