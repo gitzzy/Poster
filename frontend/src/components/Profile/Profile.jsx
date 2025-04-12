@@ -7,13 +7,15 @@ import BusinessCenterIcon from "@mui/icons-material/BusinessCenter";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import TabsComp from "./TabsComp";
+import ProfileModal from "./ProfileModal";
 
 export default function Profile() {
   const navigate = useNavigate();
-
+  const [openProfileModal, setOpenProfileModal] = React.useState(false);
   const handleBack = () => navigate(-1);
   const handleOpenProfileModel = () => {
     console.log("Changing profile");
+    setOpenProfileModal(true);
   };
 
   const handleFollowUser = () => {
@@ -49,7 +51,7 @@ export default function Profile() {
           />
 
           <div className="mr-20">
-            {false ? (
+            {true ? (
               <Button
                 className="rounded-full"
                 variant="contained"
@@ -119,6 +121,11 @@ export default function Profile() {
         <div>
           <TabsComp />
         </div>
+      </section>
+      <section>
+        <ProfileModal
+        open={openProfileModal}
+        handleClose={() => setOpenProfileModal(false)}/>
       </section>
     </div>
   );
