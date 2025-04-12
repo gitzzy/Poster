@@ -15,7 +15,7 @@ import RepeatRoundedIcon from "@mui/icons-material/RepeatRounded";
 import FavoriteBorderRoundedIcon from "@mui/icons-material/FavoriteBorderRounded";
 import RemoveRedEyeRoundedIcon from "@mui/icons-material/RemoveRedEyeRounded";
 import IosShareRoundedIcon from "@mui/icons-material/IosShareRounded";
-import FavoriteIcon from '@mui/icons-material/Favorite';
+import FavoriteIcon from "@mui/icons-material/Favorite";
 
 export default function TweetCard() {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -142,61 +142,59 @@ export default function TweetCard() {
         </div>
       </div>
       <div className="mt-2 ml-15">
-  {/* Image + caption */}
-  <div className="w-[28rem]">
-    <p className="mb-2">This is Sample tweet</p>
-    <img
-      className="w-full border border-gray-400 p-5 rounded-md"
-      src="http://localhost:5173/src/components/assets/avt.webp"
-      alt=""
-    />
-  </div>
+        <div onClick={()=>navigate(`/twit/${3}`)} className="w-[28rem] cursor-pointer">
+          <p className="mb-2 p-0">This is Sample tweet</p>
+          <img
+            className="w-full border border-gray-400 p-5 rounded-md"
+            src="http://localhost:5173/src/components/assets/avt.webp"
+            alt=""
+          />
+        </div>
 
-  {/* Action buttons */}
-  <div className="py-5 w-[28rem] flex justify-between items-center text-gray-600">
-    <div className="flex items-center space-x-2">
-      <ChatBubbleOutlineRoundedIcon
-        className="cursor-pointer"
-        onClick={handleComment}
-      />
-      <p>43</p>
-    </div>
+        {/* Action buttons */}
+        <div className="py-5 w-[28rem] flex justify-between items-center text-gray-600">
+          <div className="flex items-center space-x-2">
+            <ChatBubbleOutlineRoundedIcon
+              className="cursor-pointer"
+              onClick={handleComment}
+            />
+            <p>43</p>
+          </div>
 
-    <div className="flex items-center space-x-2 text-green-600">
-      <RepeatRoundedIcon
-        className="cursor-pointer"
-        onClick={handleRepost}
-      />
-      <p>99</p>
-    </div>
+          <div className="flex items-center space-x-2 text-green-600">
+            <RepeatRoundedIcon
+              className="cursor-pointer"
+              onClick={handleRepost}
+            />
+            <p>99</p>
+          </div>
 
-    <div className="flex items-center space-x-2">
-      {like ? (
-        <FavoriteBorderRoundedIcon
-          className="cursor-pointer"
-          onClick={handleLike}
-        />
-      ) : (
-        <FavoriteIcon
-          className="text-red-500 cursor-pointer"
-          onClick={handleLike}
-        />
-      )}
-      <p>67</p>
-    </div>
+          <div className="flex items-center space-x-2">
+            {like ? (
+              <FavoriteBorderRoundedIcon
+                className="cursor-pointer"
+                onClick={handleLike}
+              />
+            ) : (
+              <FavoriteIcon
+                className="text-red-500 cursor-pointer"
+                onClick={handleLike}
+              />
+            )}
+            <p>67</p>
+          </div>
 
-    <RemoveRedEyeRoundedIcon
-      className="cursor-pointer"
-      onClick={handleViews}
-    />
+          <RemoveRedEyeRoundedIcon
+            className="cursor-pointer"
+            onClick={handleViews}
+          />
 
-    <IosShareRoundedIcon
-      className="cursor-pointer"
-      onClick={handleShare}
-    />
-  </div>
-</div>
-
+          <IosShareRoundedIcon
+            className="cursor-pointer"
+            onClick={handleShare}
+          />
+        </div>
       </div>
+    </div>
   );
 }
