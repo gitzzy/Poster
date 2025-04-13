@@ -10,7 +10,7 @@ import com.example.TwitterSpringBoot.Request.TwitReplyRequest;
 
 public interface TwitService {
 
-	public Twit createTwit(Twit req, User user)throws Exception;
+	public Twit createTwit(Twit req, User user)throws TwitException;
 	
 	public List<Twit> findAllTwit();
 	

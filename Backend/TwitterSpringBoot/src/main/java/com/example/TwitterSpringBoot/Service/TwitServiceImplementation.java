@@ -20,7 +20,7 @@ public class TwitServiceImplementation implements TwitService{
 	private TwitRepository twitRepository;
 
 	@Override
-	public Twit createTwit(Twit req, User user) throws Exception {
+	public Twit createTwit(Twit req, User user) throws TwitException {
 		
 		Twit replyFor  = findById(req.getId());
 		
