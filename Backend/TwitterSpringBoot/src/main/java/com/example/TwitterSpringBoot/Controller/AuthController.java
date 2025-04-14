@@ -19,6 +19,7 @@ import com.example.TwitterSpringBoot.Exception.UserException;
 import com.example.TwitterSpringBoot.Model.User;
 import com.example.TwitterSpringBoot.Model.Verification;
 import com.example.TwitterSpringBoot.Repository.UserRepository;
+import com.example.TwitterSpringBoot.Response.AuthResponse;
 import com.example.TwitterSpringBoot.Service.CustomeUserDetailsServiceImplementation;
 
 @RestController

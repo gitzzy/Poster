@@ -1,4 +1,4 @@
-package com.example.TwitterSpringBoot.Controller;
+package com.example.TwitterSpringBoot.Response;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
