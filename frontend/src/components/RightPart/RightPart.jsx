@@ -3,6 +3,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import LightModeIcon from '@mui/icons-material/LightMode';
 import { Button } from '@mui/material';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
+import SubscriptionModal from '../Subscription/SubscriptionModal';
 
 export default function RightPart() {
 
@@ -49,6 +50,9 @@ export default function RightPart() {
           </div>
           )}
           
+      </section>
+      <section>
+        <SubscriptionModal/>
       </section>
       
     </div>

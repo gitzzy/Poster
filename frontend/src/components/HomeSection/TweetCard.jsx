@@ -9,13 +9,13 @@ import MenuItem from "@mui/material/MenuItem";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
-import Logout from "@mui/icons-material/Logout";
 import ChatBubbleOutlineRoundedIcon from "@mui/icons-material/ChatBubbleOutlineRounded";
 import RepeatRoundedIcon from "@mui/icons-material/RepeatRounded";
 import FavoriteBorderRoundedIcon from "@mui/icons-material/FavoriteBorderRounded";
 import RemoveRedEyeRoundedIcon from "@mui/icons-material/RemoveRedEyeRounded";
 import IosShareRoundedIcon from "@mui/icons-material/IosShareRounded";
 import FavoriteIcon from "@mui/icons-material/Favorite";
+import ReplyModal from "./ReplyModal";
 
 export default function TweetCard() {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -37,6 +37,7 @@ export default function TweetCard() {
 
   const handleComment = () => {
     console.log("Comment");
+    handleOpenReplyModal();
   };
 
   const [like, setLike] = React.useState(true);
@@ -59,8 +60,18 @@ export default function TweetCard() {
 
   const navigate = useNavigate();
 
+  const [openReplyModal, setOpenReplyModal] = React.useState(false);
+  const handleOpenReplyModal = () => {
+    console.log("Opening reply modal");
+    setOpenReplyModal(true);
+  };
+  const handleCloseReplyModal = () => {
+    console.log("Closing reply modal");
+    setOpenReplyModal(false);
+  };
+
   return (
-    <div className="">
+    <React.Fragment>
       <div className="flex items-center font-semibold text-gray-700 py-2 hidden">
         <RepeatIcon />
         <p className="hidden">You reposted</p>
@@ -195,6 +206,9 @@ export default function TweetCard() {
           />
         </div>
       </div>
-    </div>
+      <section>
+        <ReplyModal open={openReplyModal} handleClose={handleCloseReplyModal}/>
+      </section>
+    </React.Fragment>
   );
 }
